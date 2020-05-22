@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import './Navbar.css';
+
 class Header extends Component {
 
     renderContent() {
@@ -17,19 +19,24 @@ class Header extends Component {
 
     render() {
         return (
-            <nav className="black">
-                <div className="nav-wrapper container">
+            <header>
+                <div className="ui container">
                     <Link
                         to={this.props.auth ? '/surveys' : '/'}
                         className="left brand-logo"
                     >
                         FeedbackMail
                     </Link>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        {this.renderContent()}
-                    </ul>
+                    <input id="nav" type="checkbox" />
+                    <label htmlFor="nav"></label>
+                    <nav style={{ backgroundColor: 'transparent' }}>
+                        <ul>
+                            {this.renderContent()}
+                            <li><a href="https://xscotophilic.ml/">MY PORTFOLIO</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </nav>
+            </header>
         );
     }
 }
