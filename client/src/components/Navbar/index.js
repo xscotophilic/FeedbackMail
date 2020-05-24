@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Payments from '../Payments';
 import './Navbar.css';
 
 class Header extends Component {
@@ -13,7 +14,11 @@ class Header extends Component {
             case false:
                 return <li><a href="/auth/google">Login With Google</a></li>;
             default:
-                return <li><a href="/api/logout">Logout</a></li>;
+                return [
+                    <li key="asdf0" ><Payments /></li>,
+                    <li className="liwithouta" key="asdf1" >Credits: {this.props.auth.credits}</li>,
+                    <li key="asdf2"><a href="/api/logout">Logout</a></li>
+                ];
         }
     }
 
@@ -29,12 +34,12 @@ class Header extends Component {
                     </Link>
                     <input id="nav" type="checkbox" />
                     <label htmlFor="nav"></label>
-                    <nav style={{ backgroundColor: 'transparent' }}>
+                    <div className="navbar" style={{ backgroundColor: 'transparent' }}>
                         <ul>
                             {this.renderContent()}
                             <li><a href="https://xscotophilic.ml/">MY PORTFOLIO</a></li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
             </header>
         );

@@ -6,6 +6,7 @@
 header {
 	overflow: hidden;
 	background: #000000;
+	color: #ffffff;
 }
 
 header a, header label {
@@ -31,12 +32,17 @@ header label:after {
 	font-size: 1.8em;
 }
 
+.liwithouta {
+	padding: 0px;
+	margin-top: 10px;
+}
+
 .logo {
 	float: left;
 	font-size: 1.5em;
 }
 
-nav {
+.navbar {
 	float: right;
 	max-height: 0;
 	width: 100%;
@@ -46,19 +52,19 @@ nav {
 	transition: max-height 0.3s;
 }
 
-nav ul {
+.navbar ul {
 	margin: 0;
 	padding: 0;
 	padding-bottom: 10px;
 }
 
-nav li {
+.navbar li {
 	display: block;
 	text-align: center;
 }
 
-nav a {
-	padding: 10px 0px 10px 10px;
+.navbar a {
+	padding: 10px 10px 10px 10px;
 	width: 100%;
 }
 
@@ -66,7 +72,7 @@ nav a {
 	display: none;
 }
 
-#nav:checked~nav {
+#nav:checked~.navbar {
 	max-height: 200px;
 	/* This can be anything bigger than your nav height. The transition duration works with this */
 }
@@ -75,20 +81,25 @@ nav a {
 	header label {
 		display: none;
 	}
-	nav {
+	.navbar {
 		width: auto;
 		max-height: none;
 	}
-	nav ul {
+	.navbar ul {
 		padding: 0;
 	}
-	nav li {
+	.navbar li {
 		display: inline-block;
 		text-align: left;
+		padding: 15px auto;
 	}
-	header nav a {
+	header .navbar a {
 		display: inline-block;
-		padding: 13px 0px 12px 20px;
+		padding: 20px 0px 20px 20px;
 		width: auto;
+	}
+	.liwithouta{
+		padding-left: 20px;
+		margin-top: 0px;
 	}
 }

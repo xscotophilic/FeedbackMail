@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from './Header';
+import Navbar from './Navbar';
 import Landing from './Landing';
 import * as actions from '../actions';
 
@@ -29,7 +29,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
+            <Navbar />
             <div className="container">
               <Route exact path="/" component={Landing} />
               <Route exact path="/surveys" component={Dashboard} />
