@@ -2,13 +2,13 @@
 /config/.DS_Store
 /config/dev.js
 
-.DS_STORE
 /client/.DS_STORE
 /client/.env.development
-/client/.env.production
+
 node_modules
 /client/node_modules
 scripts/flow/*/.flowconfig
+
 .flowconfig
 *~
 *.pyc
