@@ -15,9 +15,10 @@ class Header extends Component {
                 return <li><a href="/auth/google">Login With Google</a></li>;
             default:
                 return [
-                    <li key="asdf0" ><Payments /></li>,
-                    <li className="liwithouta" key="asdf1" >Credits: {this.props.auth.credits}</li>,
-                    <li key="asdf2"><a href="/api/logout">Logout</a></li>
+                    <li key="asdf0"><Link to='/surveys' style={{ marginRight: '20px' }}>Dashboard</Link></li>,
+                    <li key="asdf1" ><Payments /></li>,
+                    <li key="asdf2" className="liwithouta">Credits: {this.props.auth.credits}</li>,
+                    <li key="asdf3"><a href="/api/logout">Logout</a></li>
                 ];
         }
     }
