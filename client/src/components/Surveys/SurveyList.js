@@ -9,6 +9,22 @@ class SurveyList extends Component {
         this.props.fetchSurveys();
     }
 
+    calculatePercentage(yes, no) {
+        if (parseInt(yes) === 0) {
+            return (
+                <div style={{ fontWeight: '500', color: '#7e57c2' }}>
+                    0 Responses!
+                </div>
+            );
+        }
+        return (
+            <div style={{ textTransform: 'uppercase', fontWeight: '500', color: '#7e57c2' }}>
+                {(yes / (yes + no)) * 100}% Yes &nbsp; &nbsp; &nbsp;
+                {100 - ((yes / (yes + no)) * 100)}% NO
+            </div>
+        );
+    }
+
     renderSurveys = () => {
         return this.props.fetchedSurveys.reverse().map(survey => {
             return (
@@ -28,6 +44,7 @@ class SurveyList extends Component {
                             >
                             </div>
                         </div>
+                        {this.calculatePercentage(survey.yes, survey.no)}
                     </div>
                 </div>
             );
