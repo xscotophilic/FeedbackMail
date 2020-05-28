@@ -26,7 +26,7 @@ class SurveyFormReview extends Component {
     renderFields = () => {
         return _.map(formFields, ({ lable, name }) => {
             return (
-                <div key={name}>
+                <div key={name} style={{ marginBottom: '8px' }}>
                     <label style={{ fontSize: '16px' }}>{lable}</label>
                     <div style={{ fontSize: '18px' }}>{this.props.formValues[name]}</div>
                 </div>
