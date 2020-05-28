@@ -20,7 +20,7 @@ class SurveyList extends Component {
         return (
             <div style={{ textTransform: 'uppercase', fontWeight: '500', color: '#7e57c2' }}>
                 {((yes / (yes + no)) * 100).toFixed(2)}% Yes &nbsp; &nbsp; &nbsp;
-                {100 - ((yes / (yes + no)) * 100).toFixed(2)}% NO
+                {(100 - ((yes / (yes + no)) * 100)).toFixed(2)}% NO
             </div>
         );
     }
